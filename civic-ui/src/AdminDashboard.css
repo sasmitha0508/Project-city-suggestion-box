@@ -1,0 +1,1616 @@
+/* Font and Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+:root {
+  --primary-color: #4a6bff;
+  --primary-dark: #3a56d4;
+  --primary-light: #eef2ff;
+  --secondary-color: #7c4dff;
+  --accent-color: #00bcd4;
+  --light-color: #ffffff;
+  --dark-color: #2d3748;
+  --gray-color: #718096;
+  --light-gray: #f7fafc;
+  --success-color: #48bb78;
+  --warning-color: #ed8936;
+  --danger-color: #f56565;
+  --info-color: #4299e1;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --sidebar-width: 280px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7ff;
+  color: var(--dark-color);
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+/* Admin Dashboard Layout */
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.admin-header {
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo i {
+  font-size: 1.5rem;
+}
+
+.admin-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.admin-nav button {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-nav button:hover {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.admin-nav button.active {
+  color: var(--primary-color);
+  font-weight: 600;
+  background-color: var(--primary-light);
+}
+
+.admin-nav button.logout {
+  color: var(--danger-color);
+}
+
+.admin-nav button.logout:hover {
+  background-color: rgba(245, 101, 101, 0.1);
+}
+
+.admin-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 320px;
+  background-color: var(--light-color);
+  box-shadow: var(--shadow-md);
+  height: calc(100vh - 70px);
+  padding: 2rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: sticky;
+  top: 70px;
+  z-index: 90;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.admin-focus-card {
+  background-color: var(--primary-light);
+  border-radius: 14px;
+  padding: 1.75rem;
+  margin-bottom: 2.25rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.admin-focus-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.focus-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.focus-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.focus-icon {
+  width: 42px;
+  height: 36px;
+  background-color: rgba(74, 107, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.focus-item h4 {
+  font-size: 0.8rem;
+  color: var(--gray-color);
+  margin-bottom: 0.2rem;
+}
+
+.focus-item p {
+  font-weight: 600;
+  color: var(--dark-color);
+  font-size: 0.9rem;
+}
+
+.status-filter {
+  background-color: var(--light-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.status-filter h4 {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--dark-color);
+  font-size: 0.95rem;
+}
+
+.status-filter select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-color);
+  font-size: 0.9rem;
+}
+
+.status-filter select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.2);
+}
+
+.stats-card {
+  background-color: var(--light-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.stats-card h4 {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--dark-color);
+  font-size: 0.95rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.stat-item.open {
+  background-color: rgba(245, 101, 101, 0.1);
+}
+
+.stat-item.in-progress {
+  background-color: rgba(237, 137, 54, 0.1);
+}
+
+.stat-item.resolved {
+  background-color: rgba(72, 187, 120, 0.1);
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.stat-item.open .stat-value {
+  color: var(--danger-color);
+}
+
+.stat-item.in-progress .stat-value {
+  color: var(--warning-color);
+}
+
+.stat-item.resolved .stat-value {
+  color: var(--success-color);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--gray-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Main Panel Styles */
+.main-panel {
+  flex: 1;
+  padding: 2.5rem;
+  background-color: #f5f7ff;
+  overflow-y: auto;
+  height: calc(100vh - 70px);
+}
+
+/* Issues Section */
+.issues-section {
+  background-color: var(--light-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  min-height: 100%;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.section-header h2 {
+  color: var(--dark-color);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.section-subtitle {
+  color: var(--gray-color);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.status-filter-mobile {
+  display: none;
+}
+
+/* Issue Cards */
+.issue-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.issue-card {
+  background-color: var(--light-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.issue-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-image-container {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+}
+
+.issue-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.issue-card:hover .issue-image {
+  transform: scale(1.05);
+}
+
+.status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.status-badge.open {
+  background-color: var(--danger-color);
+}
+
+.status-badge.in-progress {
+  background-color: var(--warning-color);
+  color: var(--dark-color);
+}
+
+.status-badge.resolved {
+  background-color: var(--success-color);
+}
+
+.status-badge.pending {
+  background-color: var(--info-color);
+}
+
+.resolution-days-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #17a2b8;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+}
+
+.card-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--dark-color);
+  line-height: 1.4;
+}
+
+.meta-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--gray-color);
+}
+
+.meta-info span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: var(--gray-color);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.view-details-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.view-details-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* No Results */
+.no-results {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  padding: 2rem;
+}
+
+.no-results-content {
+  text-align: center;
+  max-width: 400px;
+}
+
+.no-results i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--success-color);
+}
+
+.no-results h3 {
+  font-size: 1.5rem;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.no-results p {
+  color: var(--gray-color);
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .admin-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .issue-cards {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-header {
+    padding: 0 1rem;
+  }
+
+  .main-panel {
+    padding: 1rem;
+  }
+
+  .status-filter {
+    display: none;
+  }
+
+  .status-filter-mobile {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .issue-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Profile Section */
+.profile-section {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.profile-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  padding: 2rem;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background-color: var(--light-gray);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.profile-header h3 {
+  font-size: 1.5rem;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.role {
+  color: var(--gray-color);
+  font-size: 0.9rem;
+}
+
+.profile-details {
+  margin-bottom: 2rem;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.label {
+  width: 120px;
+  font-weight: 500;
+  color: var(--dark-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.value {
+  flex: 1;
+  color: var(--gray-color);
+}
+
+.edit-profile-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.edit-profile-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.issue-details-modal {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+.modal-overlay.open .issue-details-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--gray-color);
+  transition: var(--transition);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.close-modal-btn:hover {
+  color: var(--danger-color);
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.modal-header {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.modal-header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-header-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.modal-header-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.modal-header-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.modal-header-badges .status-badge {
+  position: relative;
+  top: 0;
+  right: 0;
+  margin: 0;
+}
+
+.modal-header-badges .resolution-days-badge {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.modal-content {
+  padding: 1.5rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-weight: 500;
+  color: var(--gray-color);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detail-value {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.description-section {
+  margin-bottom: 1.5rem;
+}
+
+.description-section h4 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.description-section p {
+  color: var(--gray-color);
+  line-height: 1.6;
+}
+
+.status-control {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-control label {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-control select {
+  padding: 0.5rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Days to Resolve Section */
+.days-to-resolve-section {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 4px solid #17a2b8;
+}
+
+.days-to-resolve-section h4 {
+  margin: 0 0 15px 0;
+  color: #17a2b8;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.days-to-resolve-section .form-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.days-to-resolve-section input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.days-to-resolve-section input:focus {
+  outline: none;
+  border-color: #17a2b8;
+  box-shadow: 0 0 0 3px rgba(23, 162, 184, 0.1);
+}
+
+.save-days-btn {
+  background: #17a2b8;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.save-days-btn:hover:not(:disabled) {
+  background: #138496;
+}
+
+.save-days-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Resolution Image Section */
+.resolution-details-section {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 4px solid #28a745;
+}
+
+.resolution-details-section h4 {
+  margin: 0 0 15px 0;
+  color: #28a745;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resolution-details-section .form-group {
+  margin-bottom: 15px;
+}
+
+.resolution-details-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.resolution-details-section input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+}
+
+.image-preview {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.save-image-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px auto 0;
+}
+
+.save-image-btn:hover:not(:disabled) {
+  background: #218838;
+}
+
+.save-image-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.existing-resolution-image {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #dee2e6;
+}
+
+.existing-resolution-image h5 {
+  margin: 0 0 10px 0;
+  color: #495057;
+  font-size: 14px;
+}
+
+.existing-resolution-image img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.comments-section {
+  border-top: 1px solid var(--light-gray);
+  padding-top: 1.5rem;
+}
+
+.comments-section h4 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comments-list {
+  margin-bottom: 1.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.comment {
+  background-color: var(--light-gray);
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.comment p {
+  margin-bottom: 0.5rem;
+}
+
+.comment-author {
+  font-size: 0.8rem;
+  color: var(--gray-color);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.admin-comment {
+  background-color: rgba(67, 97, 238, 0.1);
+  border-left: 3px solid var(--primary-color);
+}
+
+.no-comments {
+  text-align: center;
+  padding: 1rem;
+  color: var(--gray-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.no-comments i {
+  font-size: 1.5rem;
+}
+
+.add-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.add-comment textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  resize: vertical;
+  min-height: 100px;
+  transition: var(--transition);
+}
+
+.add-comment textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+.add-comment button {
+  align-self: flex-end;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-comment button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Animations */
+.issue-card:nth-child(1) { animation-delay: 0.1s; }
+.issue-card:nth-child(2) { animation-delay: 0.2s; }
+.issue-card:nth-child(3) { animation-delay: 0.3s; }
+.issue-card:nth-child(4) { animation-delay: 0.4s; }
+.issue-card:nth-child(5) { animation-delay: 0.5s; }
+.issue-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .days-to-resolve-section .form-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .days-to-resolve-section input {
+    min-width: unset;
+  }
+  
+  .save-days-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .modal-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .modal-header-badges {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* Form group consistency */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Button consistency */
+button {
+  transition: all 0.3s ease;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loading states */
+.fa-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Section spacing improvements */
+.status-control,
+.days-to-resolve-section,
+.resolution-details-section,
+.comments-section {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.status-control {
+  border-left: 4px solid #007bff;
+}
+
+.comments-section {
+  border-left: 4px solid #6f42c1;
+}
+
+/* Input focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Tamil Language Support - Force LTR layout */
+.tamil-language {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Ensure all text elements maintain LTR direction */
+.tamil-language * {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Form elements should also maintain LTR */
+.tamil-language input,
+.tamil-language select,
+.tamil-language textarea {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Modal content should maintain LTR */
+.tamil-language .modal-content,
+.tamil-language .modal-header,
+.tamil-language .modal-header-content {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Card content alignment */
+.tamil-language .card-content,
+.tamil-language .card-footer {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Profile section alignment */
+.tamil-language .profile-section,
+.tamil-language .profile-details,
+.tamil-language .detail-row {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Stats and filter alignment */
+.tamil-language .stats-card,
+.tamil-language .status-filter,
+.tamil-language .admin-focus-card {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Comments section alignment */
+.tamil-language .comments-section,
+.tamil-language .comments-list,
+.tamil-language .add-comment {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Button text alignment */
+.tamil-language .view-details-btn,
+.tamil-language .edit-profile-btn,
+.tamil-language .save-days-btn,
+.tamil-language .save-image-btn {
+  direction: ltr;
+}
+
+/* Status badges alignment */
+.tamil-language .status-badge,
+.tamil-language .resolution-days-badge,
+.tamil-language .resolution-label {
+  direction: ltr;
+}
+
+/* Ensure Tamil font rendering */
+.tamil-language,
+.tamil-language * {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans Tamil', 'Tamil MN', 'Nirmala UI', sans-serif;
+}
+
+/* Fix for RTL icons in LTR context */
+.tamil-language .fa,
+.tamil-language .fas,
+.tamil-language .far {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+/* Modal header image fix */
+.tamil-language .modal-header-image {
+  transform: none;
+}
+
+/* Section header alignment */
+.tamil-language .section-header {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Meta info in cards */
+.tamil-language .meta-info {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Detail grid in modal */
+.tamil-language .details-grid {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Detail items */
+.tamil-language .detail-item {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Form groups */
+.tamil-language .form-group {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Resolution form */
+.tamil-language .resolution-form {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Image preview */
+.tamil-language .image-preview {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Existing resolution image */
+.tamil-language .existing-resolution-image {
+  direction: ltr;
+  text-align: left;
+}
+
+/* No comments section */
+.tamil-language .no-comments {
+  direction: ltr;
+  text-align: center;
+}
+
+/* No results section */
+.tamil-language .no-results {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Loading spinner */
+.tamil-language .loading-spinner {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Status control */
+.tamil-language .status-control {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Days to resolve section */
+.tamil-language .days-to-resolve-section {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Resolution details section */
+.tamil-language .resolution-details-section {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Description section */
+.tamil-language .description-section {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Focus details */
+.tamil-language .focus-details {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Focus items */
+.tamil-language .focus-item {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Stats grid */
+.tamil-language .stats-grid {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Stat items */
+.tamil-language .stat-item {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Navigation buttons */
+.tamil-language .admin-nav button {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Logo text */
+.tamil-language .logo-text {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Header left section */
+.tamil-language .header-left {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Section subtitle */
+.tamil-language .section-subtitle {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Profile header */
+.tamil-language .profile-header {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Profile role */
+.tamil-language .role {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Detail labels and values */
+.tamil-language .detail-label,
+.tamil-language .detail-value {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Comment author */
+.tamil-language .comment-author {
+  direction: ltr;
+  text-align: right;
+}
+
+/* Comment text */
+.tamil-language .comment {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Admin comment */
+.tamil-language .admin-comment {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Add comment textarea */
+.tamil-language .add-comment textarea {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Status filter mobile */
+.tamil-language .status-filter-mobile {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Status filter select */
+.tamil-language .status-filter select {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Card image container */
+.tamil-language .card-image-container {
+  direction: ltr;
+}
+
+/* Resolution overlay */
+.tamil-language .resolution-overlay {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Modal overlay */
+.tamil-language .modal-overlay {
+  direction: ltr;
+}
+
+/* Modal content */
+.tamil-language .issue-details-modal {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Close modal button */
+.tamil-language .close-modal-btn {
+  direction: ltr;
+}
+
+/* Resolution days badge */
+.tamil-language .resolution-days-badge {
+  direction: ltr;
+}
+
+/* Flip-flop image styles */
+.card-image-container {
+  position: relative;
+  height: 200px;
+  perspective: 1000px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-image-container.flipped .image-flipper {
+  transform: rotateY(180deg);
+}
+
+.image-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.image-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-side.front {
+  z-index: 2;
+}
+
+.image-side.back {
+  transform: rotateY(180deg);
+}
+
+.issue-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-label {
+  position: absolute;
+  top: 40px; /* Moved below status badge */
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.before-label {
+  background: #e74c3c;
+}
+
+.after-label {
+  background: #27ae60;
+}
+
+.flip-indicator {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 3;
+}
+
+/* Status badges and resolution days badge - KEEP ORIGINAL POSITIONS */
+.status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+}
+
+
+/* Hover effects for flip containers */
+.card-image-container:not(.flipped):hover .flip-indicator {
+  background: rgba(52, 152, 219, 0.9);
+}
+
+.card-image-container.flipped:hover .flip-indicator {
+  background: rgba(231, 76, 60, 0.9);
+}

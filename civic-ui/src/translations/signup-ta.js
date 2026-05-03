@@ -1,0 +1,40 @@
+// src/translations/ta.js
+export const ta = {
+  // SignUp page specific translations
+  createAccount: "கணக்கை உருவாக்கவும்",
+  joinUs: "உங்கள் நகரத்தின் மேம்பாட்டிற்கு பங்களிக்க எங்களுடன் இணையுங்கள்",
+  username: "பயனர்பெயர்",
+  email: "மின்னஞ்சல்",
+  password: "கடவுச்சொல் (குறைந்தது 6 எழுத்துகள்)",
+  confirmPassword: "கடவுச்சொல்லை உறுதிப்படுத்தவும்",
+  accountType: "கணக்கு வகை:",
+  citizen: "குடிமகன்",
+  cityAdmin: "நகர நிர்வாகி",
+  citizens: "குடிமக்கள்",
+  cityAdmins: "நகர நிர்வாகிகள்",
+  signUp: "பதிவு செய்யவும்",
+  creatingAccount: "கணக்கு உருவாக்கப்படுகிறது...",
+  alreadyHaveAccount: "ஏற்கனவே கணக்கு உள்ளதா?",
+  logIn: "உள்நுழையவும்",
+  makeVoiceHeard: "உங்கள் குரலைக் கேட்கச் செய்யுங்கள்",
+  joinThousands: "ஆயிரக்கணக்கான",
+  workingToMake: "எங்கள் நகரத்தை ஒரு சிறந்த இடமாக மாற்ற பணியாற்றும்.",
+  shareIdeas: "உங்கள் யோசனைகளைப் பகிர்ந்து கொள்ளுங்கள்",
+  reviewSuggestions: "குடிமக்களின் பரிந்துரைகளை மதிப்பாய்வு செய்யுங்கள்",
+  trackProgress: "முன்னேற்றத்தைக் கண்காணிக்கவும்",
+  manageImprovements: "நகர மேம்பாடுகளை நிர்வகிக்கவும்",
+  communityDriven: "சமூகம் இயக்கப்படும்",
+  serveCommunity: "உங்கள் சமூகத்திற்கு சேவை செய்யுங்கள்",
+  rightsReserved: "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+  privacyPolicy: "தனியுரிமைக் கொள்கை",
+  termsOfService: "சேவை விதிமுறைகள்",
+  contactUs: "எங்களை தொடர்பு கொள்ள",
+  
+  // Validation messages
+  usernameRequired: "பயனர்பெயர் தேவை",
+  emailRequired: "மின்னஞ்சல் தேவை",
+  passwordRequired: "கடவுச்சொல் தேவை",
+  passwordMinLength: "கடவுச்சொல் குறைந்தது 6 எழுத்துகள் இருக்க வேண்டும்",
+  passwordsMustMatch: "கடவுச்சொற்கள் பொருந்த வேண்டும்",
+  accountTypeRequired: "கணக்கு வகை தேவை"
+};
