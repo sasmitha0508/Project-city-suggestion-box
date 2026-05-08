@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    let mongoURI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/city_suggestion_db';
+    let mongoURI = process.env.MONGO_URI ;
     
     // If using MongoDB Atlas, add certificate bypass for development
     if (mongoURI.includes('mongodb.net') && process.env.NODE_ENV !== 'production') {
