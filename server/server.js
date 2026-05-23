@@ -1,3 +1,5 @@
+console.log("NEW DEPLOY ACTIVE");
+
 const express = require("express");
 
 const app = express();
