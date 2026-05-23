@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './signup.css';
 import logo from './assets/logo2.png';
+import api from './services/api';
 
 // Language translations
 const translations = {

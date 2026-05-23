@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css'; // Reusing the same CSS file
 import logo from './assets/logo2.png';
+import api from './services/api';
 
 // Language translations
 const translations = {
@@ -167,16 +168,8 @@ const Login = () => {
         userType: form.userType
       };
 
-      const response = await fetch('http://localhost:5000/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(loginData),
-      });
-
-      const data = await response.json();
-
+      const response = await api.post('/auth/login', loginData);
+      const data = response.data;
       if (response.ok) {
         // Save token and user data - FIXED: Properly store token
         localStorage.setItem('token', data.token);
