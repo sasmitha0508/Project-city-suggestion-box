@@ -59,7 +59,7 @@ app.set('frontendUrl', process.env.FRONTEND_URL || 'http://localhost:3000');
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173'], // Allow both ports
+  origin: ['http://localhost:3000', 'http://localhost:5173','https://project-city-suggestion-box-98vj.vercel.app/'], // Allow both ports
   credentials: true
 }));
 
