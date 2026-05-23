@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './signup.css'; // Reusing the same CSS file
+import './Login.css'; // Reusing the same CSS file
 import logo from './assets/logo2.png';
 
 // Language translations
