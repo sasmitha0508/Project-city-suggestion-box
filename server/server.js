@@ -74,7 +74,6 @@ app.set(
 app.use(
   cors({
     origin: [
-      'http://localhost:3000',
       'http://localhost:5173',
       'https://project-city-suggestion-box-98vj.vercel.app',
     ],
