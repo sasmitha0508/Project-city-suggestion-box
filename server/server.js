@@ -80,10 +80,10 @@ if (!fs.existsSync(resolutionsDir)) {
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/users', require('./routes/userRoutes'));
-app.use('/api/reports', require('./routes/reportRoutes'));
-app.use('/api/admin', require('./routes/admin'));
+//app.use('/api/auth', require('./routes/authRoutes'));
+//app.use('/api/users', require('./routes/userRoutes'));
+//app.use('/api/reports', require('./routes/reportRoutes'));
+//app.use('/api/admin', require('./routes/admin'));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
